@@ -34,15 +34,15 @@ The backend exposes 6 URLs, but you only really care about 4 of them:
   over it) of `Entry` objects. The `entries` variable is ordered most recent
   to least recent. Your page should:
   - Display the `content` and `likes` for each `Entry`.
-  - Display a link to `entries/create`.
+  - Display a link to `entries/new`.
   - Display a "Like" button that uses `fetch` to make a `POST` request to
     `entries/<int:id>/like`. When the response gets back from the server,
     update the DOM to reflect the updated `likes`.
 - `entries/top` is exactly the same as `entries/` but it uses a template named
   `top_entries.html` and the backend orders the `entries` variable from most
   liked to least liked.
-- `entries/create` renders a template named `create_entry.html`. The template
-  should display a form that `POST`s to `entries/create` with a single input
+- `entries/new` renders a template named `create_entry.html`. The template
+  should display a form that `POST`s to `entries/new` with a single input
   named `content`. The input should be a `textarea`. The form should not allow
   the user to submit an empty `textarea`.
 - `entries/<int:id>/like` does not render a template because it is an API
