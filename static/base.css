@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    max-width: 100vw;
+}
+
+a {
+    margin-right: 1rem;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    border: 1px solid black;
+    padding: .5rem 0 .5rem;
+}
+
+.entries {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.entry {
+    min-width: 8rem;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: .5rem;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.like-button {
+    margin: .25rem;
+}
