@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'base.css' %}">
-    {% comment %} <script src="{% static 'like.js' %}" defer></script> {% endcomment %}
+    <script src="{% static 'like.js' %}" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -21,11 +21,11 @@
                     {{entry.content}}
                 </p>
                 <div class="like-button-box">
-                    <form action="{% url 'like_entry' entry.id %}" method="POST">
+                    {% comment %} <form action="{% url 'like_entry' entry.id %}" method="POST"> {% endcomment %}
                         <button class="like-button">
                             + {{entry.likes}}
                         </button>
-                    </form>
+                    {% comment %} </form> {% endcomment %}
                 </div>
             </div>
         {% endfor %}

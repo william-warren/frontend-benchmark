@@ -32,11 +32,11 @@ class LikeEntryView(View):
         entry = get_object_or_404(Entry, id=id)
         entry.likes += 1
         entry.save()
-        # return JsonResponse({"likes": entry.likes})
+        return JsonResponse({"likes": entry.likes})
 
         # totally understand that this is not the correct way to do this,
         # however i could not for life of me figure out how to fix the issue
         # of getting sent to a page with just the json response,
         # and this accomplishes the goal to my knowledge,
         # judge however you see fit, I understand if it's not satisfactory
-        return redirect("/entries")
+        # return redirect("/entries")

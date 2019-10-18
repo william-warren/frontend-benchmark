@@ -1,13 +1,16 @@
-entries = document.querySelectorAll(".entry");
-let id = 1;
-for (entry of entries) {
-    likeButton = entry.querySelector(".like-button")
-    likeButton.addEventListener("click", () => {
-        const url = `entries/${id}/like`;
-        fetch(url)
+const likeButtons = document.querySelectorAll(".like-button");
+var id = likeButtons.length;
+for (const button of likeButtons) {
+    const entryNumber = id;
+    button.addEventListener("click", () => {
+        const url = `/entries/${entryNumber}/like`;
+        fetch(url, {
+            method: "post"
+        })
+            .then(response => response.json())
             .then(data => {
-                likeButton.innerText = `+ ${entry.likes}`;
+                button.innerText = `+ ${data.likes}`;
             })
-    })
-    id += 1;
+    });
+    id -= 1;
 }
