@@ -1,9 +1,12 @@
+// Adds event listener to each like button the call the like view
+// with the correct id pass to the arguments
+// then updates dom to reflect new data.
+
 const likeButtons = document.querySelectorAll(".like-button");
-var id = likeButtons.length;
 for (const button of likeButtons) {
-    const entryNumber = id;
+    const id = button.dataset["id"];
     button.addEventListener("click", () => {
-        const url = `/entries/${entryNumber}/like`;
+        const url = `/entries/${id}/like`;
         fetch(url, {
             method: "post"
         })
@@ -12,5 +15,4 @@ for (const button of likeButtons) {
                 button.innerText = `+ ${data.likes}`;
             })
     });
-    id -= 1;
 }

@@ -20,11 +20,9 @@
                 <p>
                     {{entry.content}}
                 </p>
-                <form action="{% url 'like_entry' entry.id %}" method="POST">
-                    <button class="like-button">
-                        + {{entry.likes}}
-                    </button>
-                </form>
+                <button class="like-button" data-id="{{entry.id}}">
+                    + {{entry.likes}}
+                </button>
             </div>
         {% endfor %}
     </div>
